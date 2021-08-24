@@ -1,4 +1,4 @@
 theme = "hugo-PaperMod"
-baseURL = "http://example.org/"
+baseURL = "https://ame-aprende-a-programar.netlify.app/"
 languageCode = "en-us"
 title = "Aprendiendo a programar con R"
