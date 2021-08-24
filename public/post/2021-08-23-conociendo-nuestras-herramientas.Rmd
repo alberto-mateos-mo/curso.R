@@ -1,0 +1,30 @@
+---
+title: Conociendo nuestras herramientas
+author: Dave
+date: '2021-08-23'
+slug: conociendo-nuestras-herramientas
+categories: []
+tags: []
+---
+
+## Conociendo RStudio.
+
+Una vez que abramos RStudio veremos algo parecido a lo siguiente:
+
+![](/post/2021-08-23-conociendo-nuestras-herramientas_files/rstudio_panes.png)
+
+La sección marcada con el número 1, es donde estarán nuestros _scripts_ esto es los archivos que contendrán nuestras programas/análisis de R.
+
+La sección marcada con el número 2 tiene el ambiente de nuestra sesión, es decir las variables que vayamos creando y algunos calculos que vamos a ir almacenando.
+
+La sección número 3 corresponde a la consola de R, ahí podemos escribir código de R directamente y sera evaluado sin ser almacenado en ningún lado. De hecho podemos probarlo, copia y pega el siguiente código en la consola y dale click a enter.
+
+```{r, eval=FALSE}
+print("¡Hola R!")
+```
+
+Por último, la sección 4 contiene el directorio de nuestro proyecto, es decir, las carpetas y archivos a los cuales tenemos acceso.
+
+¿Te gusta cómo se ve RStudio? Investiga en Google cómo cambiar el tema de RStudio y cambialo a aquel que más te guste.
+
+Nos vemos 👍

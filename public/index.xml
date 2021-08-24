@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Aprendiendo a programar con R</title>
+    <link>/</link>
+    <description>Recent content on Aprendiendo a programar con R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>De qué hablamos cuando hablamos</title>
+      <link>/post/de-que-hablamos/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/de-que-hablamos/</guid>
+      <description>Análisis y limpeza de textos.Hola Ameyalli 😊, ¿alguna vez te has preguntado de qué hablamos cuando hablamos?, ¿habrá alguna palabra que más utilizas?
+Bueno pues en este proyecto analizaremos nuestra conversación (que emoción) para tratar de identificar de qué es de lo que más hablamos, si usamos alguna palabra con mayor frecuencia, o bueno realmente buscaremos si sale algo interesante gg.
+Antes de pasar al ejercicio te quiero platicar que el análisis de textos tiene muchas aplicaciones, por ejemplo qué diran los comentarios de las fotos de IG de una marca, o los comentarios de FB en un post publicitario.</description>
+    </item>
+    
+    <item>
+      <title>Conociendo nuestras herramientas</title>
+      <link>/post/conociendo-nuestras-herramientas/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/conociendo-nuestras-herramientas/</guid>
+      <description>Conociendo RStudio.Una vez que abramos RStudio veremos algo parecido a lo siguiente:
+La sección marcada con el número 1, es donde estarán nuestros scripts esto es los archivos que contendrán nuestras programas/análisis de R.
+La sección marcada con el número 2 tiene el ambiente de nuestra sesión, es decir las variables que vayamos creando y algunos calculos que vamos a ir almacenando.
+La sección número 3 corresponde a la consola de R, ahí podemos escribir código de R directamente y sera evaluado sin ser almacenado en ningún lado.</description>
+    </item>
+    
+    <item>
+      <title>Primero lo primero</title>
+      <link>/post/primero-lo-primero/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/primero-lo-primero/</guid>
+      <description>Instalando todo lo necesario.Hola Ameyalli 😊, antes que otra cosa, lo primero que harás será instalar R y RStudio.
+¿Pero qué es R y qué es RStudio?R es un lenguaje de programación de código abierto, es decir que es gratis (yeiii), que está diseñado para cómputo estadístico, por ello es un lenguaje muy popular para temas de análisis de datos.
+R es el lenguaje número 14 (en agosto 2021) en cuanto a popularidad, esto de acuerdo a un ranking llamado TIOBE y además está dentro de los 10 lenguajes de programación mejor pagados 😉, te invito a ver este video donde lo mencionan.</description>
+    </item>
+    
+  </channel>
+</rss>

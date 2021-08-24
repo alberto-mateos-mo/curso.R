@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Text Cleansing on Aprendiendo a programar con R</title>
+    <link>/tags/text-cleansing/</link>
+    <description>Recent content in Text Cleansing on Aprendiendo a programar con R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/text-cleansing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>¿De qué hablamos cuando hablamos?</title>
+      <link>/post/2015-07-23-r-rmarkdown/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015-07-23-r-rmarkdown/</guid>
+      <description>Análisis de textosHola Ameyalli 😊, ¿alguna vez te has preguntado
+</description>
+    </item>
+    
+  </channel>
+</rss>

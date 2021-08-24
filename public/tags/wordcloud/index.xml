@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Wordcloud on Aprendiendo a programar con R</title>
+    <link>/tags/wordcloud/</link>
+    <description>Recent content in Wordcloud on Aprendiendo a programar con R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/wordcloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>De qué hablamos cuando hablamos</title>
+      <link>/post/de-que-hablamos/</link>
+      <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/de-que-hablamos/</guid>
+      <description>Análisis y limpeza de textos.Hola Ameyalli 😊, ¿alguna vez te has preguntado de qué hablamos cuando hablamos?, ¿habrá alguna palabra que más utilizas?
+Bueno pues en este proyecto analizaremos nuestra conversación (que emoción) para tratar de identificar de qué es de lo que más hablamos, si usamos alguna palabra con mayor frecuencia, o bueno realmente buscaremos si sale algo interesante gg.
+Antes de pasar al ejercicio te quiero platicar que el análisis de textos tiene muchas aplicaciones, por ejemplo qué diran los comentarios de las fotos de IG de una marca, o los comentarios de FB en un post publicitario.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,82 @@
+---
+title: Primero lo primero
+author: Dave
+date: '2021-08-23'
+slug: primero-lo-primero
+categories:
+  - R
+  - Install R
+  - Install RStudio
+tags:
+  - Installing
+---
+
+# Instalando todo lo necesario.
+
+Hola Ameyalli 😊, antes que otra cosa, lo primero que harás será instalar R y RStudio.
+
+## ¿Pero qué es R y qué es RStudio?
+
+R es un lenguaje de programación de código abierto, es decir que es gratis (yeiii), que está diseñado para cómputo estadístico, por ello es un lenguaje muy popular para temas de análisis de datos.
+
+R es el lenguaje número 14 (en agosto 2021) en cuanto a popularidad, esto de acuerdo a un ranking llamado TIOBE y además está dentro de los 10 lenguajes de programación mejor pagados 😉, te invito a ver [este video](https://youtu.be/y39V9a-pgUc) donde lo mencionan.
+
+Por otro lado RStudio es una empresa que desarrolla herramientas para R gratuitas y empresariales con la intención de mejorar la producción de conocimiento y facilitar la colaboración en investigaciones. Te invito a leer un poco más de ellos en en su [sitio oficial](https://www.rstudio.com/).
+
+Uno de los productos que usaremos de ellos lleva el mismo nombre que la empresa, RStudio, este producto es un IDE (por la siglas en inglés de Integrated Development Environment), básicamente significa que es una plataforma que te permitirá desarrollar análisis en R de forma sencilla  agradable.
+
+Pero bueno, a instalarlos que se nos hace tarde...
+
+## Instalando R
+
+Para descargar R abriremos el navegador y buscaremos `install r` en Google, la página que estamos buscando debe decir __The R Project for Statistical Computing__.
+
+![](/post/2021-08-23-primero-lo-primero_files/googling_r.png)
+
+Cuando demos click en ella, veremos por ahí un hipervínculo que dice __download R__ al cual le daremos click.
+
+![](/post/2021-08-23-primero-lo-primero_files/download_r.png)
+
+En la nueva página le daremos click al primer link.
+
+![](/post/2021-08-23-primero-lo-primero_files/r_mirrors.png)
+
+Después le daremos click, en nuestro caso, a __Download R for Windows__ (sí ya sé que son muchos pasos...)
+
+![](/post/2021-08-23-primero-lo-primero_files/r_for_windows.png)
+
+Luego click en __install R for the first time__ (ya casi ya casi)
+
+![](/post/2021-08-23-primero-lo-primero_files/install_r.png)
+
+Y finalmente en __Download R 4.1.1 for Windows__
+
+![](/post/2021-08-23-primero-lo-primero_files/install_finally.png)
+
+Bueno ni tan finalmente porque ahora hay que instalar el archivo que descargamos.
+
+Abrimos el ejecutable y seleccionamos el idioma del instalador, en este caso usaremos __Español__
+
+![](/post/2021-08-23-primero-lo-primero_files/installer_01.png)
+
+Damos click en siguiente hasta llegar a esta pantalla, donde dejaremos marcadas las casillas de la imagen
+
+![](/post/2021-08-23-primero-lo-primero_files/installer_02.png)
+
+Y ahora sí por último damos click en siguiente hasta que se empiece a instalar R y damos click en __Finalizar__
+
+## Instalando RStudio
+
+Para descargar RStudio buscaremos __install RStudio__ en Google y buscaremos la página que diga __Download the RStudio IDE__
+
+![](/post/2021-08-23-primero-lo-primero_files/download_rstudio.png)
+
+Dentro de esa página escogeremos la versión RStudio Desktop gratuita
+
+![](/post/2021-08-23-primero-lo-primero_files/rstudio_free.png)
+
+En la siguiente página verás los pasos que hay que seguir, el primero (instalar R) ya lo hicimos, así que damos click en __Download RStudio for Windows__ ![](/post/2021-08-23-primero-lo-primero_files/rstudio_windows.png)
+
+Ejecutamos el archivo descargado y damos siguiente hasta que se inicie y complete la instalación.
+
+Listo, por fin tenemos todo para empezar a programar.

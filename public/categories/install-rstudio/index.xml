@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Install RStudio on Aprendiendo a programar con R</title>
+    <link>/categories/install-rstudio/</link>
+    <description>Recent content in Install RStudio on Aprendiendo a programar con R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/install-rstudio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Primero lo primero</title>
+      <link>/post/primero-lo-primero/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/primero-lo-primero/</guid>
+      <description>Instalando todo lo necesario.Hola Ameyalli 😊, antes que otra cosa, lo primero que harás será instalar R y RStudio.
+¿Pero qué es R y qué es RStudio?R es un lenguaje de programación de código abierto, es decir que es gratis (yeiii), que está diseñado para cómputo estadístico, por ello es un lenguaje muy popular para temas de análisis de datos.
+R es el lenguaje número 14 (en agosto 2021) en cuanto a popularidad, esto de acuerdo a un ranking llamado TIOBE y además está dentro de los 10 lenguajes de programación mejor pagados 😉, te invito a ver este video donde lo mencionan.</description>
+    </item>
+    
+  </channel>
+</rss>
