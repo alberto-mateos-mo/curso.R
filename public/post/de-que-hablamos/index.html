@@ -29,8 +29,8 @@ Bueno pues en este proyecto analizaremos nuestra conversación (que emoción) pa
 Antes de pasar al ejercicio te quiero platicar que el análisis de textos tiene muchas aplicaciones, por ejemplo qué diran los comentarios de las fotos de IG de una marca, o los comentarios de FB en un post publicitario." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/de-que-hablamos/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-08-24T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2021-08-24T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2021-08-25T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-08-25T00:00:00&#43;00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="De qué hablamos cuando hablamos"/>
@@ -69,11 +69,11 @@ Antes de pasar al ejercicio te quiero platicar que el análisis de textos tiene 
   "keywords": [
     "Data Cleansing", "Text Analysis", "Wordcloud"
   ],
-  "articleBody": "\r\rAnálisis y limpeza de textos.\rHola Ameyalli 😊, ¿alguna vez te has preguntado de qué hablamos cuando hablamos?, ¿habrá alguna palabra que más utilizas?\nBueno pues en este proyecto analizaremos nuestra conversación (que emoción) para tratar de identificar de qué es de lo que más hablamos, si usamos alguna palabra con mayor frecuencia, o bueno realmente buscaremos si sale algo interesante gg.\nAntes de pasar al ejercicio te quiero platicar que el análisis de textos tiene muchas aplicaciones, por ejemplo qué diran los comentarios de las fotos de IG de una marca, o los comentarios de FB en un post publicitario. Ahora que están de moda los bots, se puede analizar qué es lo que le preguntan las personas al bot y usar eso para mejorarlo.\n¿Te ha tocado responder alguna encuesta de satisfacción de una tienda comercial? Pues te imaginas tener que leer todos los comentarios, uno por uno, para saber de qué se queja la gente, que horror; pero justamente podemos usar el análisis de textos para identificar eso de forma rápida y casi que sin esfuerzo.\nPero bueno ahora sí vamos al ejercicio.\n\r",
-  "wordCount" : "186",
+  "articleBody": "\r\rAnálisis y limpeza de textos.\rHola Ameyalli 😊, ¿alguna vez te has preguntado de qué hablamos cuando hablamos?, ¿habrá alguna palabra que más utilizas?\nBueno pues en este proyecto analizaremos nuestra conversación (que emoción) para tratar de identificar de qué es de lo que más hablamos, si usamos alguna palabra con mayor frecuencia, o bueno realmente buscaremos si sale algo interesante gg.\nAntes de pasar al ejercicio te quiero platicar que el análisis de textos tiene muchas aplicaciones, por ejemplo qué diran los comentarios de las fotos de IG de una marca, o los comentarios de FB en un post publicitario. Ahora que están de moda los bots, se puede analizar qué es lo que le preguntan las personas al bot y usar eso para mejorarlo.\n¿Te ha tocado responder alguna encuesta de satisfacción de una tienda comercial? Pues te imaginas tener que leer todos los comentarios, uno por uno, para saber de qué se queja la gente, que horror; pero justamente podemos usar el análisis de textos para identificar eso de forma rápida y casi que sin esfuerzo.\nPero bueno ahora sí vamos al ejercicio.\nCreando el proyecto\rPara empezar abriremos RStudio y vamos a crear un Proyecto para trabajar en este proyecto (valga la redundancia). Al crear un proyecto en RStudio lo que haremos será aislar los scripts y documentos del mismo dentro de una carpeta, la idea es que R tenga acceso solo a los elementos de esta carpeta, con ello mantendremos un orden muy claro de nuestro trabajo y evitaremos mezclar proyectos.\nTe recomiendo leer un poco más sobre el uso de proyectos en RStudio en esta liga.\nYa que tenemos RStudio abierto, daremos click en la pestaña File y luego en New Project:\nUna vez hecho eso, se nos desplegarán las siguientes opciones:\nPor ahora solo nos centraremos en las opciones New Directory y Existing Directory.\nLa primera (New Directory) la usaremos cuando aún no hayamos creado una carpeta para nuestro proyecto, la segunda (Existing DIrectory) la usarémas si es que ya existe una carpeta en nuestros documentos que esté destinada al proyecto.\nEn nuestro caso usaremos la primera opción y enseguida se nos despelagarán las siguientes opciones:\nAhí seleccionaremos New Project y veremos lo siguiente:\nEn Directory name escribiremos el nombre de la carpeta para nuestro proyecto, ahí podemos poner e.g. analisis_chat o algún otro nombre que te parezca adecuado. Mi recomendación es que el nombre esté escrito en minúsculas, sin espacios (en lugar de ellos podemos usar guiones bajos) y sin caracteres especiales (como acentos).\nEn la opción Create project as subdirectory of: escogeremos la carpeta donde queremos que se cree la carpeta del proyecto (esto seguro se leyó confuso pero creeme que sí tiene sentido 😅).\nPor ejemplo, tal vez dentro de la carpeta Mis documentos de tu computadora tengas una carpeta llamada curso_R destinada a este curso, entonces buscaremos y elegiremos justamente la carpeta curso_R.\nFinalmente damos click en Create Project.\n\rAnálizando nuestro chat 😱\rPara empezar dale click aquí para descargar nuestra conversación de whatsapp.\nGuarda el archivo en la carpeta que hayas creado en el paso anterior.\nPrerequisitos\rPara muchas de las cosas que haremos usaremos Paquetes de R que otras personas programaron. Estos paquetes son conjuntos de funciones creadas para darle a R ciertas funciones adicionales, aquí puedes leer un poco más sobre los paquetes de R.\nPor ejemplo para hacer gráficas en R nosotros podríamos crear nuestras propias funciones pero eso sería perder un poco el tiempo pues ya alguien se preocupó por nosotros y diseño un paquete que lo hace más sencillo, nosotros solo debemos instalar ese paquete, cargarlo y empezar a usarlo.\nPara este proyecto necesitaremos algunos paquetes que nos harán la vida más fácil para analizar nuestras conversaciones, los paquetes que usaremos son:\n\rTidyverse: Este es un paquete que contiene otros paquetes diseñados específicamente para tareas de Data Science (más sobre este ecosístema aquí).\n\rtm: Este paquete se usa para tareas de minería de texto (de ahí su nombre, Text Mining), por acá hay una introducción no muy amena pero interesante.\n\rwordcloud: Este paquete lo usaremos para crear unos gráficos llamados nubes de palabras, como el nombre nos dice son gráficos que nos mostrarán palabras, aquí puedes ver algunos ejemplos.\n\r\rPara instalar esos paquetes copiaremos y pegaremos lo siguiente en la consola de R y le daremos enter:\ninstall.packages(\"tidyverse\") ## Esta instación tarda un poco, se paciente :)\rinstall.packages(\"tm\") ## Esta instación tarda un poco, se paciente :)\rinstall.packages(\"wordcloud\") ## Esta instación tarda un poco, se paciente :)\r\rLeyendo el archivo en R\rAntes de cualquier cosa lo primero que tenemos poner en nuestro script son los paquetes que usaremos en el análisis:\nlibrary(dplyr) ## Este paquete no lo instalamos directamente pero se instaló al instalar el paquete tidyverse\rlibrary(tm)\rlibrary(wordcloud)\rMuy bien continuemos…\nPara lo siguiente la idea es que vayas copiando el código y pegandolo en el script de R de tu sesión de RStudio y que lo vayas corriendo para ver qué sale.\nEl archivo de nuestra conversación es de tipo CSV es decir una tabla con valores separados por comas (Comma-Separated Values). Este no es el único tipo de archivos que se pueden leer en R, acá puedes leer un poco sobre algunos de los archivos más comunes que se pueden abrir en R.\nPara leer nuestro chat, usaremos lo siguiente:\nchat \rSi revisas el panel del ambiente, verás que hay un objeto llamado chat, dale click ahí para abrir la tabla que acabamos de cargar, revisala brevemente, notarás que en la tabla hay dos columnas, persona y mensaje ¿te parece que los mensajes se leyeron correctamente?\nEs probable que no, seguramente verás algunos simbolos raros, quizá algunos de ellos están en sitios donde debería haber una letra con acento. Esto ocurre justamente porque R no sabe muy bien cómo interpretar los acentos, para leerlos correctamente tenemos que decirle cómo decodificarlos, si cargamos los datos del siguiente modo corregiremos ese “error”:\nchat \rUn primer análisis\rAlgo que podemos intentar responder primero es, ¿quién ha enviado más mensajes? Para responder esto haremos una tabla de frecuencias de la columna persona:\nN.B. Te sugiero revisar con detenimiento la forma en que accedemos a la columa deseada de la tabla.\ntable(chat$persona)\r¿Cuál fue el resultado?, ¿te lo esperabas?\nOtra primera pregunta interesante sería ¿qué tan largos son los mensajes que intercambiamos?, para ello primero crearemos una nueva columna (o variable) que tenga la cantidad de caractéres de cada mensaje:\nN.B Nuevamente, te sugiero revisar detenidamente esta línea de código con la intención de desifrar cómo está funcionando.\nchat$longitud_mensaje \rAhora podemos calcular algunas estadísticas resumen de la longitud del mensaje:\nsummary(chat$longitud_mensaje)\r¿Qué te parecen estos resultados?\nAlgo que a mi me llama la atención es el valor máximo de caractéres en un mensaje, el cuál está muy por arriba del número promedio de caractéres que usamos.\n¿Cuál será ese mensaje y quien lo habrá enviado?\nPara determinar cuál es la posición del mensaje más largo usamos lo siguiente:\nwhich.max(chat$longitud_mensaje)\rYa que tengamos ese valor podemos encontrar a la persona que lo mandó y al mensaje de la siguiente forma:\nchat$persona[aquí_pones_el_número_que_salio]\rchat$mensaje[aquí_pones_el_número_que_salio]\ro bien:\nchat$persona[which.max(chat$longitud_mensaje)]\rchat$mensaje[which.max(chat$longitud_mensaje)]\rOk…\nYa sabemos quién mandó el mensaje más largo, ¿será que esa misma personas siempre manda mensajes largos?, para averiguarlo calcularemos la longitud promedio de los mensajes para cada persona:\nN.B Estas líneas de código pueden ser un poco más complicadas, sin embargo la sintaxis es más amigable al leerla, analiza con cuidado cómo estamos haciendo el cálculo. Te platica además que estas funciones provienen del paquete dplyr.\nchat %% group_by(persona) %% summarise(longitud_promedio = mean(longitud_mensaje))\r¿Quién tiende a mandar mensajes más largos?, ¿cómo se relaciona este resultado con el anterior sobre quién manda más mensajes?\nModifica ese código para calcular la mediana de la longitud del mensaje por persona, hagamos ese ejercicio también calculando la longitud del mensaje más pequeño y el más grande de cada persona.\n\r¿Cuáles son las palabras que más usamos?\rAhora lo que haremos será analizar los mensajes para obtener frecuencias por palabra y poder determinar si hay alguna palabra que usemos en mayor medida.\nPara hacerlo usaremos funciones del paquete tm.\nLo primero será crear un objeto de tipo Corpus (o corpora) básicamente esto es un objeto que le dice a R que lo que está ahí es lenguaje natural o lenguaje del que usamos las personas para comunicarnos:\nchat_corpus \rA continuación lo que haremos será limpiar esos textos, por ejemplo todo lo pondremos en mayúsculas para que las palabras como hola, Hola y HOLA sean consideradas como la misma. También quitaremos los posibles números que puedan aparecer pues como tal no son palabras y adicionalmente quitaremos signos de puntuación pues tampoco es relevante saber cuáles usamos.\nComo siempre, te sugiero detenerte lo necesario para tratar de enteder lo que está haciendo el código:\nchat_corpus % tm_map(content_transformer(tolower)) %% tm_map(content_transformer(removeNumbers)) %% tm_map(content_transformer(removePunctuation))\rMuy bien, ahora lo que haremos es una matriz de términos, esto es una matriz que nos diga en qué mensajes se usa cada palabra identificada.\nchat_matrix \rSi en el ambiente le das click al objeto chat_matrix verás que es una matriz algo rara, dificil de entender qué es lo que hay ahí.\nCon el siguiente código creamos una tabla de frecuencias de las palabras:\ntmp \rSi le das click al objeto chat_words podras ver la tabla de frecuencias ordenada de mayor a menor, ¿te llama la atención algo de esa tabla?, ¿crees que está bien hecha?\nAntes de corregir algunos errores de esa tabla haremos una primera nube de palabras con esa información, la nube la haremos con un máximo de 100 palabras:\nwordcloud(words = chat_words$word, freq = chat_words$freq, max.words = 100)\r¡Perfecto!\nO quizá no tanto, seguro habrás visto que algunas de las palabras más frecuente son palabras que no fueron usadas como tal en la conversación, otras de ellas son en realidad preposiciones, en el español las preposiciones son muy usadas porque permiten ligar palabras para formar oraciones por lo tanto habrá que quitar esas palabras de la conversación para tratar de identificar de mejor forma las palabras que más usamos.\n¿Recuerdas la parte de código donde quitamos los números y los signos de puntuación? Te invito a agregarle a ese código lo siguiente para quitar ahora lo que mencionamos.\ntm_map(removeWords, c(\"media\", \"omitted\")) %% tm_map(removeWords, stopwords(\"spanish\"))\rAhora podemos repetir el proceso de creación de la tabla de frecuencias y de la nube de palabras:\nchat_matrix \rtmp \rwordcloud(words = chat_words$word, freq = chat_words$freq, max.words = 100)\r¿Qué tal se ve ahora?\nComo ejercicio para que puedas practicar algunas cosas y empieces a perderle el miedo a R te dejo lo siguiente:\n\rRevisa cómo puedes ponerle color a la nube de palabras, para esto te recomiendo revisar estos tutoriales:\n\rhttp://www.sthda.com/english/wiki/text-mining-and-word-cloud-fundamentals-in-r-5-simple-steps-you-should-know\n\rhttps://towardsdatascience.com/create-a-word-cloud-with-r-bde3e7422e8a\n\r\rRepite el ejericio para crear una nube de palabras solamente con mis mensajes, ¿cuáles son las palabras que más uso?\n\rRepite el ejericio para crear una nube de palabras solamente con tus mensajes, ¿cuáles son las palabras que más usas?\n\r\rQue te diviertas :)\nRecuerda que puedes buscarme cuando sea y a la hora que sea por si necesitas ayuda.\n\r\r\r\r",
+  "wordCount" : "1894",
   "inLanguage": "en",
-  "datePublished": "2021-08-24T00:00:00Z",
-  "dateModified": "2021-08-24T00:00:00Z",
+  "datePublished": "2021-08-25T00:00:00Z",
+  "dateModified": "2021-08-25T00:00:00Z",
   "author":{
     "@type": "Person",
     "name": "Dave"
@@ -182,7 +182,7 @@ Antes de pasar al ejercicio te quiero platicar que el análisis de textos tiene 
     <h1 class="post-title">
       De qué hablamos cuando hablamos
     </h1>
-    <div class="post-meta">August 24, 2021&nbsp;·&nbsp;Dave
+    <div class="post-meta">August 25, 2021&nbsp;·&nbsp;Dave
 </div>
   </header> 
   <div class="post-content">
@@ -196,6 +196,143 @@ Antes de pasar al ejercicio te quiero platicar que el análisis de textos tiene 
 <p>Antes de pasar al ejercicio te quiero platicar que el análisis de textos tiene muchas aplicaciones, por ejemplo qué diran los comentarios de las fotos de IG de una marca, o los comentarios de FB en un post publicitario. Ahora que están de moda los bots, se puede analizar qué es lo que le preguntan las personas al bot y usar eso para mejorarlo.</p>
 <p>¿Te ha tocado responder alguna encuesta de satisfacción de una tienda comercial? Pues te imaginas tener que leer todos los comentarios, uno por uno, para saber de qué se queja la gente, que horror; pero justamente podemos usar el análisis de textos para identificar eso de forma rápida y casi que sin esfuerzo.</p>
 <p>Pero bueno ahora sí vamos al ejercicio.</p>
+<div id="creando-el-proyecto" class="section level2">
+<h2>Creando el proyecto</h2>
+<p>Para empezar abriremos RStudio y vamos a crear un <strong>Proyecto</strong> para trabajar en este proyecto (valga la redundancia). Al crear un proyecto en RStudio lo que haremos será aislar los scripts y documentos del mismo dentro de una carpeta, la idea es que R tenga acceso solo a los elementos de esta carpeta, con ello mantendremos un orden muy claro de nuestro trabajo y evitaremos mezclar proyectos.</p>
+<p>Te recomiendo leer un poco más sobre el uso de proyectos en RStudio en <a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects">esta liga</a>.</p>
+<p>Ya que tenemos RStudio abierto, daremos click en la pestaña <strong>File</strong> y luego en <strong>New Project</strong>:</p>
+<p><img src="/post/2021-08-24-de-que-hablamos_files/new_project.png" /></p>
+<p>Una vez hecho eso, se nos desplegarán las siguientes opciones:</p>
+<p><img src="/post/2021-08-24-de-que-hablamos_files/new_project_options.png" /></p>
+<p>Por ahora solo nos centraremos en las opciones <strong>New Directory</strong> y <strong>Existing Directory</strong>.</p>
+<p>La primera (<strong>New Directory</strong>) la usaremos cuando aún no hayamos creado una carpeta para nuestro proyecto, la segunda (<strong>Existing DIrectory</strong>) la usarémas si es que ya existe una carpeta en nuestros documentos que esté destinada al proyecto.</p>
+<p>En nuestro caso usaremos la primera opción y enseguida se nos despelagarán las siguientes opciones:</p>
+<p><img src="/post/2021-08-24-de-que-hablamos_files/new_directory.png" /></p>
+<p>Ahí seleccionaremos <strong>New Project</strong> y veremos lo siguiente:</p>
+<p><img src="/post/2021-08-24-de-que-hablamos_files/new_directory_options.png" /></p>
+<p>En <strong>Directory name</strong> escribiremos el nombre de la carpeta para nuestro proyecto, ahí podemos poner e.g. <em>analisis_chat</em> o algún otro nombre que te parezca adecuado. Mi recomendación es que el nombre esté escrito en minúsculas, sin espacios (en lugar de ellos podemos usar guiones bajos) y sin caracteres especiales (como acentos).</p>
+<p>En la opción <strong>Create project as subdirectory of:</strong> escogeremos la carpeta donde queremos que se cree la carpeta del proyecto (esto seguro se leyó confuso pero creeme que sí tiene sentido 😅).</p>
+<p>Por ejemplo, tal vez dentro de la carpeta <strong>Mis documentos</strong> de tu computadora tengas una carpeta llamada <strong>curso_R</strong> destinada a este curso, entonces buscaremos y elegiremos justamente la carpeta <strong>curso_R</strong>.</p>
+<p>Finalmente damos click en <strong>Create Project</strong>.</p>
+</div>
+<div id="análizando-nuestro-chat" class="section level2">
+<h2>Análizando nuestro chat 😱</h2>
+<p>Para empezar dale click <a href="https://drive.google.com/file/d/1E0_h9BNbb8v3giLmAxPqJR9JAcXEd4a6/view?usp=sharing">aquí</a> para descargar nuestra conversación de whatsapp.</p>
+<p>Guarda el archivo en la carpeta que hayas creado en el paso anterior.</p>
+<!-- Ahora, hay dos formas en las que puedes seguir los ejercicios, una es continuar leyendo y la otra es descargar y abrir [este script](www.example.org) en RStudio y seguir las instrucciones ahí. -->
+<div id="prerequisitos" class="section level3">
+<h3>Prerequisitos</h3>
+<p>Para muchas de las cosas que haremos usaremos <strong>Paquetes de R</strong> que otras personas programaron. Estos paquetes son conjuntos de funciones creadas para darle a R ciertas funciones adicionales, <a href="https://hbctraining.github.io/Intro-to-R-flipped/lessons/04_introR_packages.html">aquí</a> puedes leer un poco más sobre los paquetes de R.</p>
+<p>Por ejemplo para hacer gráficas en R nosotros podríamos crear nuestras propias funciones pero eso sería perder un poco el tiempo pues ya alguien se preocupó por nosotros y diseño un paquete que lo hace más sencillo, nosotros solo debemos instalar ese paquete, cargarlo y empezar a usarlo.</p>
+<p>Para este proyecto necesitaremos algunos paquetes que nos harán la vida más fácil para analizar nuestras conversaciones, los paquetes que usaremos son:</p>
+<ul>
+<li><p>Tidyverse: Este es un paquete que contiene otros paquetes diseñados específicamente para tareas de <em>Data Science</em> (más sobre este ecosístema <a href="https://www.tidyverse.org/">aquí</a>).</p></li>
+<li><p>tm: Este paquete se usa para tareas de minería de texto (de ahí su nombre, Text Mining), <a href="https://cran.r-project.org/web/packages/tm/vignettes/tm.pdf">por acá</a> hay una introducción no muy amena pero interesante.</p></li>
+<li><p>wordcloud: Este paquete lo usaremos para crear unos gráficos llamados nubes de palabras, como el nombre nos dice son gráficos que nos mostrarán palabras, <a href="http://blog.fellstat.com/?cat=11">aquí</a> puedes ver algunos ejemplos.</p></li>
+</ul>
+<p>Para instalar esos paquetes copiaremos y pegaremos lo siguiente en la consola de R y le daremos enter:</p>
+<pre class="r"><code>install.packages(&quot;tidyverse&quot;) ## Esta instación tarda un poco, se paciente :)</code></pre>
+<pre class="r"><code>install.packages(&quot;tm&quot;) ## Esta instación tarda un poco, se paciente :)</code></pre>
+<pre class="r"><code>install.packages(&quot;wordcloud&quot;) ## Esta instación tarda un poco, se paciente :)</code></pre>
+</div>
+<div id="leyendo-el-archivo-en-r" class="section level3">
+<h3>Leyendo el archivo en R</h3>
+<p>Antes de cualquier cosa lo primero que tenemos poner en nuestro script son los paquetes que usaremos en el análisis:</p>
+<pre class="r"><code>library(dplyr) ## Este paquete no lo instalamos directamente pero se instaló al instalar el paquete tidyverse
+library(tm)
+library(wordcloud)</code></pre>
+<p>Muy bien continuemos…</p>
+<p>Para lo siguiente la idea es que vayas copiando el código y pegandolo en el script de R de tu sesión de RStudio y que lo vayas corriendo para ver qué sale.</p>
+<p>El archivo de nuestra conversación es de tipo <strong>CSV</strong> es decir una tabla con valores separados por comas (Comma-Separated Values). Este no es el único tipo de archivos que se pueden leer en R, <a href="https://www.datafiles.samhsa.gov/get-help/format-specific-issues/how-do-i-read-data-r">acá</a> puedes leer un poco sobre algunos de los archivos más comunes que se pueden abrir en R.</p>
+<p>Para leer nuestro chat, usaremos lo siguiente:</p>
+<pre class="r"><code>chat &lt;- read.csv(&quot;wa_chat.csv&quot;)</code></pre>
+<p>Si revisas el panel del ambiente, verás que hay un objeto llamado chat, dale click ahí para abrir la tabla que acabamos de cargar, revisala brevemente, notarás que en la tabla hay dos columnas, <code>persona</code> y <code>mensaje</code> ¿te parece que los mensajes se leyeron correctamente?</p>
+<p>Es probable que no, seguramente verás algunos simbolos raros, quizá algunos de ellos están en sitios donde debería haber una letra con acento. Esto ocurre justamente porque R no sabe muy bien cómo interpretar los acentos, para leerlos correctamente tenemos que decirle cómo <em>decodificarlos</em>, si cargamos los datos del siguiente modo corregiremos ese “error”:</p>
+<pre class="r"><code>chat &lt;- read.csv(&quot;dequehablamos/wa_chat.csv&quot;, encoding = &quot;UTF-8&quot;)</code></pre>
+<div id="un-primer-análisis" class="section level4">
+<h4>Un primer análisis</h4>
+<p>Algo que podemos intentar responder primero es, ¿quién ha enviado más mensajes? Para responder esto haremos una tabla de frecuencias de la columna <code>persona</code>:</p>
+<p><strong>N.B.</strong> Te sugiero revisar con detenimiento la forma en que <em>accedemos</em> a la columa deseada de la tabla.</p>
+<pre class="r"><code>table(chat$persona)</code></pre>
+<p>¿Cuál fue el resultado?, ¿te lo esperabas?</p>
+<p>Otra primera pregunta interesante sería ¿qué tan largos son los mensajes que intercambiamos?, para ello primero crearemos una nueva columna (o variable) que tenga la cantidad de caractéres de cada mensaje:</p>
+<p><strong>N.B</strong> Nuevamente, te sugiero revisar detenidamente esta línea de código con la intención de desifrar cómo está funcionando.</p>
+<pre class="r"><code>chat$longitud_mensaje &lt;- nchar(chat$mensaje)</code></pre>
+<p>Ahora podemos calcular algunas estadísticas <em>resumen</em> de la longitud del mensaje:</p>
+<pre class="r"><code>summary(chat$longitud_mensaje)</code></pre>
+<p>¿Qué te parecen estos resultados?</p>
+<p>Algo que a mi me llama la atención es el valor máximo de caractéres en un mensaje, el cuál está muy por arriba del número promedio de caractéres que usamos.</p>
+<p>¿Cuál será ese mensaje y quien lo habrá enviado?</p>
+<p>Para determinar cuál es la <em>posición</em> del mensaje más largo usamos lo siguiente:</p>
+<pre class="r"><code>which.max(chat$longitud_mensaje)</code></pre>
+<p>Ya que tengamos ese valor podemos encontrar a la persona que lo mandó y al mensaje de la siguiente forma:</p>
+<pre class="r"><code>chat$persona[aquí_pones_el_número_que_salio]
+chat$mensaje[aquí_pones_el_número_que_salio]</code></pre>
+<p>o bien:</p>
+<pre class="r"><code>chat$persona[which.max(chat$longitud_mensaje)]
+chat$mensaje[which.max(chat$longitud_mensaje)]</code></pre>
+<p>Ok…</p>
+<p>Ya sabemos quién mandó el mensaje más largo, ¿será que esa misma personas siempre manda mensajes largos?, para averiguarlo calcularemos la longitud promedio de los mensajes para cada persona:</p>
+<p><strong>N.B</strong> Estas líneas de código pueden ser un poco más complicadas, sin embargo la sintaxis es más amigable al leerla, analiza con cuidado cómo estamos haciendo el cálculo. Te platica además que estas funciones provienen del paquete <code>dplyr</code>.</p>
+<pre class="r"><code>chat %&gt;% 
+  group_by(persona) %&gt;% 
+  summarise(longitud_promedio = mean(longitud_mensaje))</code></pre>
+<p>¿Quién tiende a mandar mensajes más largos?, ¿cómo se relaciona este resultado con el anterior sobre quién manda más mensajes?</p>
+<p>Modifica ese código para calcular la mediana de la longitud del mensaje por persona, hagamos ese ejercicio también calculando la longitud del mensaje más pequeño y el más grande de cada persona.</p>
+</div>
+<div id="cuáles-son-las-palabras-que-más-usamos" class="section level4">
+<h4>¿Cuáles son las palabras que más usamos?</h4>
+<p>Ahora lo que haremos será analizar los mensajes para obtener frecuencias por palabra y poder determinar si hay alguna palabra que usemos en mayor medida.</p>
+<p>Para hacerlo usaremos funciones del paquete <code>tm</code>.</p>
+<p>Lo primero será crear un objeto de tipo <strong>Corpus</strong> (o corpora) básicamente esto es un objeto que le dice a R que lo que está ahí es <em>lenguaje natural</em> o lenguaje del que usamos las personas para comunicarnos:</p>
+<pre class="r"><code>chat_corpus &lt;- Corpus(VectorSource(chat$mensaje))</code></pre>
+<p>A continuación lo que haremos será limpiar esos textos, por ejemplo todo lo pondremos en mayúsculas para que las palabras como <em>hola</em>, <em>Hola</em> y <em>HOLA</em> sean consideradas como la misma. También quitaremos los posibles números que puedan aparecer pues como tal no son palabras y adicionalmente quitaremos signos de puntuación pues tampoco es relevante saber cuáles usamos.</p>
+<p>Como siempre, te sugiero detenerte lo necesario para tratar de enteder lo que está haciendo el código:</p>
+<pre class="r"><code>chat_corpus &lt;- chat_corpus %&gt;% 
+  tm_map(content_transformer(tolower)) %&gt;% 
+  tm_map(content_transformer(removeNumbers)) %&gt;% 
+  tm_map(content_transformer(removePunctuation))</code></pre>
+<p>Muy bien, ahora lo que haremos es una matriz de términos, esto es una matriz que nos diga en qué mensajes se usa cada palabra identificada.</p>
+<pre class="r"><code>chat_matrix &lt;- TermDocumentMatrix(chat_corpus)
+
+chat_matrix &lt;- as.matrix(chat_matrix)</code></pre>
+<p>Si en el ambiente le das click al objeto <code>chat_matrix</code> verás que es una matriz algo rara, dificil de entender qué es lo que hay ahí.</p>
+<p>Con el siguiente código creamos una tabla de frecuencias de las palabras:</p>
+<pre class="r"><code>tmp &lt;- sort(rowSums(chat_matrix), decreasing=TRUE)
+
+chat_words &lt;- data.frame(word = names(tmp), freq = tmp)</code></pre>
+<p>Si le das click al objeto <code>chat_words</code> podras ver la tabla de frecuencias ordenada de mayor a menor, ¿te llama la atención algo de esa tabla?, ¿crees que está <em>bien hecha</em>?</p>
+<p>Antes de corregir algunos errores de esa tabla haremos una primera nube de palabras con esa información, la nube la haremos con un máximo de 100 palabras:</p>
+<pre class="r"><code>wordcloud(words = chat_words$word, freq = chat_words$freq, max.words = 100)</code></pre>
+<p>¡Perfecto!</p>
+<p>O quizá no tanto, seguro habrás visto que algunas de las palabras más frecuente son palabras que no fueron usadas como tal en la conversación, otras de ellas son en realidad preposiciones, en el español las preposiciones son muy usadas porque permiten ligar palabras para formar oraciones por lo tanto habrá que quitar esas palabras de la conversación para tratar de identificar de mejor forma las palabras que más usamos.</p>
+<p>¿Recuerdas la parte de código donde quitamos los números y los signos de puntuación? Te invito a agregarle a ese código lo siguiente para quitar ahora lo que mencionamos.</p>
+<pre class="r"><code>tm_map(removeWords, c(&quot;media&quot;, &quot;omitted&quot;)) %&gt;% 
+  tm_map(removeWords, stopwords(&quot;spanish&quot;))</code></pre>
+<p>Ahora podemos repetir el proceso de creación de la tabla de frecuencias y de la nube de palabras:</p>
+<pre class="r"><code>chat_matrix &lt;- TermDocumentMatrix(chat_corpus)
+
+chat_matrix &lt;- as.matrix(chat_matrix)</code></pre>
+<pre class="r"><code>tmp &lt;- sort(rowSums(chat_matrix), decreasing=TRUE)
+
+chat_words &lt;- data.frame(word = names(tmp), freq = tmp)</code></pre>
+<pre class="r"><code>wordcloud(words = chat_words$word, freq = chat_words$freq, max.words = 100)</code></pre>
+<p>¿Qué tal se ve ahora?</p>
+<p>Como ejercicio para que puedas practicar algunas cosas y empieces a perderle el miedo a R te dejo lo siguiente:</p>
+<ul>
+<li><p>Revisa cómo puedes ponerle color a la nube de palabras, para esto te recomiendo revisar estos tutoriales:</p>
+<ul>
+<li><p><a href="http://www.sthda.com/english/wiki/text-mining-and-word-cloud-fundamentals-in-r-5-simple-steps-you-should-know" class="uri">http://www.sthda.com/english/wiki/text-mining-and-word-cloud-fundamentals-in-r-5-simple-steps-you-should-know</a></p></li>
+<li><p><a href="https://towardsdatascience.com/create-a-word-cloud-with-r-bde3e7422e8a" class="uri">https://towardsdatascience.com/create-a-word-cloud-with-r-bde3e7422e8a</a></p></li>
+</ul></li>
+<li><p>Repite el ejericio para crear una nube de palabras solamente con mis mensajes, ¿cuáles son las palabras que más uso?</p></li>
+<li><p>Repite el ejericio para crear una nube de palabras solamente con tus mensajes, ¿cuáles son las palabras que más usas?</p></li>
+</ul>
+<p>Que te diviertas :)</p>
+<p>Recuerda que puedes buscarme cuando sea y a la hora que sea por si necesitas ayuda.</p>
+</div>
+</div>
+</div>
 </div>
 
 
